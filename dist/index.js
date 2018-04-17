@@ -62,7 +62,7 @@
 /******/ 	__webpack_require__.p = "";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 9);
+/******/ 	return __webpack_require__(__webpack_require__.s = 10);
 /******/ })
 /************************************************************************/
 /******/ ([
@@ -78,14 +78,94 @@ module.exports.render._withStripped = true
 
 /***/ }),
 /* 1 */
+/***/ (function(module, exports) {
+
+module.exports = {
+  "listItem": {
+    "paddingTop": "20",
+    "paddingRight": "24",
+    "paddingBottom": 0,
+    "paddingLeft": "24",
+    "marginBottom": "20",
+    "borderTop": "1px solid #ddd",
+    "borderBottom": "1px solid #ddd",
+    "justifyContent": "flex-start"
+  },
+  "listHead": {
+    "justifyContent": "space-around",
+    "flexFlow": "row"
+  },
+  "userPic": {
+    "width": "80",
+    "height": "80",
+    "borderRadius": "8"
+  },
+  "userInfo": {
+    "flex": 1,
+    "marginLeft": "20"
+  },
+  "listbody": {
+    "paddingTop": "10",
+    "paddingRight": 0,
+    "paddingBottom": "10",
+    "paddingLeft": 0,
+    "fontSize": "30",
+    "color": "#000000",
+    "borderBottom": "1px solid #ddd"
+  },
+  "listbottom": {
+    "flexFlow": "row"
+  },
+  "gridItem": {
+    "height": "40",
+    "marginTop": "20",
+    "marginRight": 0,
+    "marginBottom": "20",
+    "marginLeft": 0,
+    "flexFlow": "row",
+    "justifyContent": "center",
+    "flex": 1,
+    "borderRight": "1px solid #ddd",
+    "alignContent": "flex-start"
+  },
+  "font": {
+    "width": "60",
+    "fontSize": "40"
+  }
+}
+
+/***/ }),
+/* 2 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
 Object.defineProperty(exports, "__esModule", {
-	value: true
+    value: true
 });
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 //
 //
 //
@@ -99,16 +179,22 @@ Object.defineProperty(exports, "__esModule", {
 //
 
 exports.default = {
-	name: 'listItem',
-	props: {
-		listItem: {
-			type: Object
-		}
-	}
+    name: 'listItem',
+    data: function data() {
+        return {
+            fontName: '\uE661'
+        };
+    },
+
+    props: {
+        listItem: {
+            type: Object
+        }
+    }
 };
 
 /***/ }),
-/* 2 */
+/* 3 */
 /***/ (function(module, exports) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
@@ -123,32 +209,54 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     }
   }), _c('div', {
     staticClass: ["userInfo"]
-  }, [_c('text', [_vm._v(_vm._s(_vm.listItem.title))]), _c('text', [_vm._v(_vm._s(_vm.listItem.name))])])])])
+  }, [_c('text', [_vm._v(_vm._s(_vm.listItem.name))]), _c('text', [_vm._v(_vm._s(_vm.listItem.time))])])]), _c('div', {
+    staticClass: ["listbody"]
+  }, [_c('text', [_vm._v(_vm._s(_vm.listItem.title))])]), _c('div', {
+    staticClass: ["listbottom"]
+  }, [_c('div', {
+    staticClass: ["gridItem"]
+  }, [_c('text', {
+    staticClass: ["font"],
+    style: {
+      fontFamily: 'iconfont',
+      color: 'red'
+    }
+  }, [_vm._v("\n                " + _vm._s(_vm.fontName) + "\n            ")]), _c('text', [_vm._v("\n                " + _vm._s(_vm.listItem.view) + "\n            ")])]), _c('div', {
+    staticClass: ["gridItem"]
+  }, [_c('text', {
+    staticClass: ["font"],
+    style: {
+      fontFamily: 'iconfont',
+      color: 'red'
+    }
+  }, [_vm._v("\n                " + _vm._s(_vm.fontName) + "\n            ")]), _c('text', [_vm._v(_vm._s(_vm.listItem.commentNum))])]), _c('div', {
+    staticClass: ["gridItem"]
+  }, [_c('text', [_vm._v(_vm._s(_vm.listItem.timeBefore))])])])])
 },staticRenderFns: []}
 module.exports.render._withStripped = true
 
 /***/ }),
-/* 3 */,
 /* 4 */,
 /* 5 */,
 /* 6 */,
 /* 7 */,
 /* 8 */,
-/* 9 */
+/* 9 */,
+/* 10 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var __vue_exports__, __vue_options__
 var __vue_styles__ = []
 
 /* styles */
-__vue_styles__.push(__webpack_require__(10)
+__vue_styles__.push(__webpack_require__(11)
 )
 
 /* script */
-__vue_exports__ = __webpack_require__(11)
+__vue_exports__ = __webpack_require__(12)
 
 /* template */
-var __vue_template__ = __webpack_require__(18)
+var __vue_template__ = __webpack_require__(19)
 __vue_options__ = __vue_exports__ = __vue_exports__ || {}
 if (
   typeof __vue_exports__.default === "object" ||
@@ -160,10 +268,10 @@ __vue_options__ = __vue_exports__ = __vue_exports__.default
 if (typeof __vue_options__ === "function") {
   __vue_options__ = __vue_options__.options
 }
-__vue_options__.__file = "D:\\lwr\\weexapp\\src\\index.vue"
+__vue_options__.__file = "H:\\lwr\\weexdemo\\src\\index.vue"
 __vue_options__.render = __vue_template__.render
 __vue_options__.staticRenderFns = __vue_template__.staticRenderFns
-__vue_options__._scopeId = "data-v-66c45351"
+__vue_options__._scopeId = "data-v-e4c7abba"
 __vue_options__.style = __vue_options__.style || {}
 __vue_styles__.forEach(function (module) {
   for (var name in module) {
@@ -180,10 +288,16 @@ new Vue(module.exports)
 
 
 /***/ }),
-/* 10 */
+/* 11 */
 /***/ (function(module, exports) {
 
 module.exports = {
+  "@FONT-FACE": [
+    {
+      "fontFamily": "iconfont",
+      "src": "url('//at.alicdn.com/t/font_267539_fkwl88carr7ldi.eot?#iefix') format('embedded-opentype'),\n  url('//at.alicdn.com/t/font_267539_fkwl88carr7ldi.woff') format('woff'),\n  url('//at.alicdn.com/t/font_267539_fkwl88carr7ldi.ttf') format('truetype'),\n  url('//at.alicdn.com/t/font_267539_fkwl88carr7ldi.svg#iconfont') format('svg')"
+    }
+  ],
   "wrapper": {
     "justifyContent": "flex-start",
     "alignItems": "center"
@@ -214,7 +328,7 @@ module.exports = {
 }
 
 /***/ }),
-/* 11 */
+/* 12 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -224,15 +338,15 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
-var _HelloWorld = __webpack_require__(12);
+var _HelloWorld = __webpack_require__(13);
 
 var _HelloWorld2 = _interopRequireDefault(_HelloWorld);
 
-var _topBar = __webpack_require__(13);
+var _topBar = __webpack_require__(14);
 
 var _topBar2 = _interopRequireDefault(_topBar);
 
-var _listItem = __webpack_require__(17);
+var _listItem = __webpack_require__(18);
 
 var _listItem2 = _interopRequireDefault(_listItem);
 
@@ -249,11 +363,19 @@ exports.default = {
     return {
       logo: 'https://gw.alicdn.com/tfs/TB1yopEdgoQMeJjy1XaXXcSsFXa-640-302.png',
       listData: [{
-        title: '1111111',
-        time: '11111'
+        title: 'React Native 初始化项目运行报错',
+        name: 'Hyurl',
+        time: '20180417',
+        view: 2209,
+        commentNum: 22,
+        timeBefore: '1小时前'
       }, {
-        title: '2222',
-        time: '11111'
+        title: '新手爬虫，教你如何爬掘金（一）',
+        name: 'fruit-memory',
+        time: '20180417',
+        view: 1102,
+        commentNum: 11,
+        timeBefore: '2小时前'
       }]
     };
   }
@@ -268,7 +390,7 @@ exports.default = {
 //
 
 /***/ }),
-/* 12 */
+/* 13 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var __vue_exports__, __vue_options__
@@ -287,53 +409,9 @@ __vue_options__ = __vue_exports__ = __vue_exports__.default
 if (typeof __vue_options__ === "function") {
   __vue_options__ = __vue_options__.options
 }
-__vue_options__.__file = "D:\\lwr\\weexapp\\src\\components\\HelloWorld.vue"
+__vue_options__.__file = "H:\\lwr\\weexdemo\\src\\components\\HelloWorld.vue"
 __vue_options__.render = __vue_template__.render
 __vue_options__.staticRenderFns = __vue_template__.staticRenderFns
-__vue_options__.style = __vue_options__.style || {}
-__vue_styles__.forEach(function (module) {
-  for (var name in module) {
-    __vue_options__.style[name] = module[name]
-  }
-})
-if (typeof __register_static_styles__ === "function") {
-  __register_static_styles__(__vue_options__._scopeId, __vue_styles__)
-}
-
-module.exports = __vue_exports__
-
-
-/***/ }),
-/* 13 */
-/***/ (function(module, exports, __webpack_require__) {
-
-var __vue_exports__, __vue_options__
-var __vue_styles__ = []
-
-/* styles */
-__vue_styles__.push(__webpack_require__(14)
-)
-
-/* script */
-__vue_exports__ = __webpack_require__(15)
-
-/* template */
-var __vue_template__ = __webpack_require__(16)
-__vue_options__ = __vue_exports__ = __vue_exports__ || {}
-if (
-  typeof __vue_exports__.default === "object" ||
-  typeof __vue_exports__.default === "function"
-) {
-if (Object.keys(__vue_exports__).some(function (key) { return key !== "default" && key !== "__esModule" })) {console.error("named exports are not supported in *.vue files.")}
-__vue_options__ = __vue_exports__ = __vue_exports__.default
-}
-if (typeof __vue_options__ === "function") {
-  __vue_options__ = __vue_options__.options
-}
-__vue_options__.__file = "D:\\lwr\\weexapp\\src\\components\\topBar.vue"
-__vue_options__.render = __vue_template__.render
-__vue_options__.staticRenderFns = __vue_template__.staticRenderFns
-__vue_options__._scopeId = "data-v-9840adfa"
 __vue_options__.style = __vue_options__.style || {}
 __vue_styles__.forEach(function (module) {
   for (var name in module) {
@@ -349,6 +427,50 @@ module.exports = __vue_exports__
 
 /***/ }),
 /* 14 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var __vue_exports__, __vue_options__
+var __vue_styles__ = []
+
+/* styles */
+__vue_styles__.push(__webpack_require__(15)
+)
+
+/* script */
+__vue_exports__ = __webpack_require__(16)
+
+/* template */
+var __vue_template__ = __webpack_require__(17)
+__vue_options__ = __vue_exports__ = __vue_exports__ || {}
+if (
+  typeof __vue_exports__.default === "object" ||
+  typeof __vue_exports__.default === "function"
+) {
+if (Object.keys(__vue_exports__).some(function (key) { return key !== "default" && key !== "__esModule" })) {console.error("named exports are not supported in *.vue files.")}
+__vue_options__ = __vue_exports__ = __vue_exports__.default
+}
+if (typeof __vue_options__ === "function") {
+  __vue_options__ = __vue_options__.options
+}
+__vue_options__.__file = "H:\\lwr\\weexdemo\\src\\components\\topBar.vue"
+__vue_options__.render = __vue_template__.render
+__vue_options__.staticRenderFns = __vue_template__.staticRenderFns
+__vue_options__._scopeId = "data-v-7f21d4d5"
+__vue_options__.style = __vue_options__.style || {}
+__vue_styles__.forEach(function (module) {
+  for (var name in module) {
+    __vue_options__.style[name] = module[name]
+  }
+})
+if (typeof __register_static_styles__ === "function") {
+  __register_static_styles__(__vue_options__._scopeId, __vue_styles__)
+}
+
+module.exports = __vue_exports__
+
+
+/***/ }),
+/* 15 */
 /***/ (function(module, exports) {
 
 module.exports = {
@@ -372,14 +494,14 @@ module.exports = {
 }
 
 /***/ }),
-/* 15 */
+/* 16 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
 Object.defineProperty(exports, "__esModule", {
-	value: true
+  value: true
 });
 //
 //
@@ -388,28 +510,28 @@ Object.defineProperty(exports, "__esModule", {
 //
 
 exports.default = {
-	name: 'topbar',
-	data: function data() {
-		return {
-			itemData: [{
-				name: '全部',
-				id: 'all'
-			}, {
-				name: '精华',
-				id: 'good'
-			}, {
-				name: '分享',
-				id: 'share'
-			}, {
-				name: '招聘',
-				id: 'job'
-			}]
-		};
-	}
+  name: 'topBar',
+  data: function data() {
+    return {
+      itemData: [{
+        name: '全部',
+        id: 'all'
+      }, {
+        name: '精华',
+        id: 'good'
+      }, {
+        name: '分享',
+        id: 'share'
+      }, {
+        name: '招聘',
+        id: 'job'
+      }]
+    };
+  }
 };
 
 /***/ }),
-/* 16 */
+/* 17 */
 /***/ (function(module, exports) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
@@ -425,21 +547,21 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
 module.exports.render._withStripped = true
 
 /***/ }),
-/* 17 */
+/* 18 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var __vue_exports__, __vue_options__
 var __vue_styles__ = []
 
 /* styles */
-__vue_styles__.push(__webpack_require__(19)
+__vue_styles__.push(__webpack_require__(1)
 )
 
 /* script */
-__vue_exports__ = __webpack_require__(1)
+__vue_exports__ = __webpack_require__(2)
 
 /* template */
-var __vue_template__ = __webpack_require__(2)
+var __vue_template__ = __webpack_require__(3)
 __vue_options__ = __vue_exports__ = __vue_exports__ || {}
 if (
   typeof __vue_exports__.default === "object" ||
@@ -451,10 +573,10 @@ __vue_options__ = __vue_exports__ = __vue_exports__.default
 if (typeof __vue_options__ === "function") {
   __vue_options__ = __vue_options__.options
 }
-__vue_options__.__file = "D:\\lwr\\weexapp\\src\\components\\listItem.vue"
+__vue_options__.__file = "H:\\lwr\\weexdemo\\src\\components\\listItem.vue"
 __vue_options__.render = __vue_template__.render
 __vue_options__.staticRenderFns = __vue_template__.staticRenderFns
-__vue_options__._scopeId = "data-v-5bd61a96"
+__vue_options__._scopeId = "data-v-5f3c99e8"
 __vue_options__.style = __vue_options__.style || {}
 __vue_styles__.forEach(function (module) {
   for (var name in module) {
@@ -469,7 +591,7 @@ module.exports = __vue_exports__
 
 
 /***/ }),
-/* 18 */
+/* 19 */
 /***/ (function(module, exports) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
@@ -479,6 +601,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     staticClass: ["listWrap"]
   }, _vm._l((_vm.listData), function(item) {
     return _c('listItem', {
+      key: item,
       attrs: {
         "listItem": item
       }
@@ -486,35 +609,6 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
   }))], 1)
 },staticRenderFns: []}
 module.exports.render._withStripped = true
-
-/***/ }),
-/* 19 */
-/***/ (function(module, exports) {
-
-module.exports = {
-  "listItem": {
-    "paddingTop": "20",
-    "paddingRight": "24",
-    "paddingBottom": 0,
-    "paddingLeft": "24",
-    "height": "120",
-    "marginBottom": "20",
-    "borderTop": "1px solid #ddd",
-    "borderBottom": "1px solid #ddd",
-    "justifyContent": "flex-start"
-  },
-  "listHead": {
-    "justifyContent": "space-around"
-  },
-  "userPic": {
-    "width": "80",
-    "height": "80",
-    "borderRadius": "8"
-  },
-  "userInfo": {
-    "width": "200"
-  }
-}
 
 /***/ })
 /******/ ]);

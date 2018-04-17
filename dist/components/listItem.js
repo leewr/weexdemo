@@ -62,20 +62,100 @@
 /******/ 	__webpack_require__.p = "";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 4);
+/******/ 	return __webpack_require__(__webpack_require__.s = 5);
 /******/ })
 /************************************************************************/
-/******/ ({
+/******/ ([
+/* 0 */,
+/* 1 */
+/***/ (function(module, exports) {
 
-/***/ 1:
+module.exports = {
+  "listItem": {
+    "paddingTop": "20",
+    "paddingRight": "24",
+    "paddingBottom": 0,
+    "paddingLeft": "24",
+    "marginBottom": "20",
+    "borderTop": "1px solid #ddd",
+    "borderBottom": "1px solid #ddd",
+    "justifyContent": "flex-start"
+  },
+  "listHead": {
+    "justifyContent": "space-around",
+    "flexFlow": "row"
+  },
+  "userPic": {
+    "width": "80",
+    "height": "80",
+    "borderRadius": "8"
+  },
+  "userInfo": {
+    "flex": 1,
+    "marginLeft": "20"
+  },
+  "listbody": {
+    "paddingTop": "10",
+    "paddingRight": 0,
+    "paddingBottom": "10",
+    "paddingLeft": 0,
+    "fontSize": "30",
+    "color": "#000000",
+    "borderBottom": "1px solid #ddd"
+  },
+  "listbottom": {
+    "flexFlow": "row"
+  },
+  "gridItem": {
+    "height": "40",
+    "marginTop": "20",
+    "marginRight": 0,
+    "marginBottom": "20",
+    "marginLeft": 0,
+    "flexFlow": "row",
+    "justifyContent": "center",
+    "flex": 1,
+    "borderRight": "1px solid #ddd",
+    "alignContent": "flex-start"
+  },
+  "font": {
+    "width": "60",
+    "fontSize": "40"
+  }
+}
+
+/***/ }),
+/* 2 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
 Object.defineProperty(exports, "__esModule", {
-	value: true
+    value: true
 });
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 //
 //
 //
@@ -89,47 +169,22 @@ Object.defineProperty(exports, "__esModule", {
 //
 
 exports.default = {
-	name: 'listItem',
-	props: {
-		listItem: {
-			type: Object
-		}
-	}
+    name: 'listItem',
+    data: function data() {
+        return {
+            fontName: '\uE661'
+        };
+    },
+
+    props: {
+        listItem: {
+            type: Object
+        }
+    }
 };
 
 /***/ }),
-
-/***/ 19:
-/***/ (function(module, exports) {
-
-module.exports = {
-  "listItem": {
-    "paddingTop": "20",
-    "paddingRight": "24",
-    "paddingBottom": 0,
-    "paddingLeft": "24",
-    "height": "120",
-    "marginBottom": "20",
-    "borderTop": "1px solid #ddd",
-    "borderBottom": "1px solid #ddd",
-    "justifyContent": "flex-start"
-  },
-  "listHead": {
-    "justifyContent": "space-around"
-  },
-  "userPic": {
-    "width": "80",
-    "height": "80",
-    "borderRadius": "8"
-  },
-  "userInfo": {
-    "width": "200"
-  }
-}
-
-/***/ }),
-
-/***/ 2:
+/* 3 */
 /***/ (function(module, exports) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
@@ -144,27 +199,49 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     }
   }), _c('div', {
     staticClass: ["userInfo"]
-  }, [_c('text', [_vm._v(_vm._s(_vm.listItem.title))]), _c('text', [_vm._v(_vm._s(_vm.listItem.name))])])])])
+  }, [_c('text', [_vm._v(_vm._s(_vm.listItem.name))]), _c('text', [_vm._v(_vm._s(_vm.listItem.time))])])]), _c('div', {
+    staticClass: ["listbody"]
+  }, [_c('text', [_vm._v(_vm._s(_vm.listItem.title))])]), _c('div', {
+    staticClass: ["listbottom"]
+  }, [_c('div', {
+    staticClass: ["gridItem"]
+  }, [_c('text', {
+    staticClass: ["font"],
+    style: {
+      fontFamily: 'iconfont',
+      color: 'red'
+    }
+  }, [_vm._v("\n                " + _vm._s(_vm.fontName) + "\n            ")]), _c('text', [_vm._v("\n                " + _vm._s(_vm.listItem.view) + "\n            ")])]), _c('div', {
+    staticClass: ["gridItem"]
+  }, [_c('text', {
+    staticClass: ["font"],
+    style: {
+      fontFamily: 'iconfont',
+      color: 'red'
+    }
+  }, [_vm._v("\n                " + _vm._s(_vm.fontName) + "\n            ")]), _c('text', [_vm._v(_vm._s(_vm.listItem.commentNum))])]), _c('div', {
+    staticClass: ["gridItem"]
+  }, [_c('text', [_vm._v(_vm._s(_vm.listItem.timeBefore))])])])])
 },staticRenderFns: []}
 module.exports.render._withStripped = true
 
 /***/ }),
-
-/***/ 4:
+/* 4 */,
+/* 5 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var __vue_exports__, __vue_options__
 var __vue_styles__ = []
 
 /* styles */
-__vue_styles__.push(__webpack_require__(19)
+__vue_styles__.push(__webpack_require__(1)
 )
 
 /* script */
-__vue_exports__ = __webpack_require__(1)
+__vue_exports__ = __webpack_require__(2)
 
 /* template */
-var __vue_template__ = __webpack_require__(2)
+var __vue_template__ = __webpack_require__(3)
 __vue_options__ = __vue_exports__ = __vue_exports__ || {}
 if (
   typeof __vue_exports__.default === "object" ||
@@ -176,10 +253,10 @@ __vue_options__ = __vue_exports__ = __vue_exports__.default
 if (typeof __vue_options__ === "function") {
   __vue_options__ = __vue_options__.options
 }
-__vue_options__.__file = "D:\\lwr\\weexapp\\src\\components\\listItem.vue"
+__vue_options__.__file = "H:\\lwr\\weexdemo\\src\\components\\listItem.vue"
 __vue_options__.render = __vue_template__.render
 __vue_options__.staticRenderFns = __vue_template__.staticRenderFns
-__vue_options__._scopeId = "data-v-5bd61a96"
+__vue_options__._scopeId = "data-v-5f3c99e8"
 __vue_options__.style = __vue_options__.style || {}
 __vue_styles__.forEach(function (module) {
   for (var name in module) {
@@ -196,5 +273,4 @@ new Vue(module.exports)
 
 
 /***/ })
-
-/******/ });
+/******/ ]);

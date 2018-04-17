@@ -2,7 +2,7 @@
   <div class="wrapper">
     <TopBar />
     <div class="listWrap">
-      <listItem v-for="item in listData" :listItem="item"/>
+      <listItem v-for="item in listData" :listItem="item" :key="item"/>
     </div>
   </div>
 </template>
@@ -23,12 +23,20 @@ export default {
       logo: 'https://gw.alicdn.com/tfs/TB1yopEdgoQMeJjy1XaXXcSsFXa-640-302.png',
       listData: [
         {
-          title: '1111111',
-          time: '11111'
+          title: 'React Native 初始化项目运行报错',
+          name: 'Hyurl',
+          time: '20180417',
+          view: 2209,
+          commentNum: 22,
+          timeBefore: '1小时前'
         },
         {
-          title: '2222',
-          time: '11111'
+          title: '新手爬虫，教你如何爬掘金（一）',
+          name: 'fruit-memory',
+          time: '20180417',
+          view: 1102,
+          commentNum: 11,
+          timeBefore: '2小时前'
         }
       ]
     }
@@ -36,7 +44,15 @@ export default {
 }
 </script>
 
-<style scoped>
+<style>
+  @font-face {
+    font-family: 'iconfont';  /* project id 267539 */
+    src: url('//at.alicdn.com/t/font_267539_fkwl88carr7ldi.eot');
+    src: url('//at.alicdn.com/t/font_267539_fkwl88carr7ldi.eot?#iefix') format('embedded-opentype'),
+    url('//at.alicdn.com/t/font_267539_fkwl88carr7ldi.woff') format('woff'),
+    url('//at.alicdn.com/t/font_267539_fkwl88carr7ldi.ttf') format('truetype'),
+    url('//at.alicdn.com/t/font_267539_fkwl88carr7ldi.svg#iconfont') format('svg');
+  }
   .wrapper {
     justify-content: flex-start;
     align-items: center;

@@ -1,6 +1,7 @@
 const path = require('path');
 const ROOT = path.resolve(__dirname, '..');
 const ip = require('ip').address();
+console.log(ip)
 const config = {
   root: ROOT,
   // webpack-dev-server
@@ -126,4 +127,5 @@ const config = {
     zlib: false
   }
 }
+console.log(config.host)
 module.exports = config;
