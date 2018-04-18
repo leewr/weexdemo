@@ -1,6 +1,6 @@
 <template>
   <div class="topbar">
-      <text v-for="itme in itemData" class="topbarItem" :key="itme.id">{{itme.name}}</text>
+      <text v-for="(itme, index) in itemData" class="topbarItem" :class="{'topbarItemactive': active===index}" :key="itme.id" @click="tabChange(index)" >{{itme.name}}</text>
   </div>
 </template>
 <script>
@@ -8,6 +8,7 @@ export default {
   name: 'topBar',
   data () {
     return {
+      active: 0,
       itemData: [
         {
           name: '全部',
@@ -27,19 +28,25 @@ export default {
         }
       ]
     }
+  },
+  methods: {
+    tabChange (index) {
+      this.active = index
+      this.$parent.params.tab = 'ask'
+      this.$parent.fetchData()
+    }
   }
 }
 </script>
 <style>
     .topbar{
-        position: absolute;
+        position: fixed;
         left: 0;
         top: 0;
         right: 0;
         height: 80px;
-        flex:1;
+        flex: 1;
         flex-direction: row;
-        justify-content: space-around;
         background: #fff;
         border-bottom: 1px solid #ddd;
     }
@@ -47,5 +54,12 @@ export default {
         line-height: 80px;
         color: #333;
         font-size: 14px;
+        flex: 1;
+        align-self: center;
+        text-align: center;
+        border-bottom: 3px solid transparent
+    }
+    .topbarItemactive {
+      border-bottom-color: #3eb4ff
     }
 </style>

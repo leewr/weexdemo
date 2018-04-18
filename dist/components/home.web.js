@@ -62,7 +62,7 @@
 /******/ 	__webpack_require__.p = "";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 40);
+/******/ 	return __webpack_require__(__webpack_require__.s = 34);
 /******/ })
 /************************************************************************/
 /******/ ([
@@ -23042,13 +23042,7 @@ if (false) {
 /***/ }),
 /* 32 */,
 /* 33 */,
-/* 34 */,
-/* 35 */,
-/* 36 */,
-/* 37 */,
-/* 38 */,
-/* 39 */,
-/* 40 */
+/* 34 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -23065,8 +23059,283 @@ var _weexVueRender2 = _interopRequireDefault(_weexVueRender);
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 _weexVueRender2.default.init(_vue2.default);
-var App = __webpack_require__(14);
+var App = __webpack_require__(35);
 new _vue2.default(_vue2.default.util.extend({ el: '#root' }, App));
+
+/***/ }),
+/* 35 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var disposed = false
+function injectStyle (ssrContext) {
+  if (disposed) return
+  __webpack_require__(36)
+}
+var Component = __webpack_require__(1)(
+  /* script */
+  __webpack_require__(38),
+  /* template */
+  __webpack_require__(39),
+  /* styles */
+  injectStyle,
+  /* scopeId */
+  null,
+  /* moduleIdentifier (server only) */
+  null
+)
+Component.options.__file = "D:\\lwr\\weexapp\\src\\components\\home.vue"
+if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key.substr(0, 2) !== "__"})) {console.error("named exports are not supported in *.vue files.")}
+if (Component.options.functional) {console.error("[vue-loader] home.vue: functional components are not supported with templates, they should use render functions.")}
+
+/* hot reload */
+if (false) {(function () {
+  var hotAPI = require("vue-hot-reload-api")
+  hotAPI.install(require("vue"), false)
+  if (!hotAPI.compatible) return
+  module.hot.accept()
+  if (!module.hot.data) {
+    hotAPI.createRecord("data-v-5546d4e0", Component.options)
+  } else {
+    hotAPI.reload("data-v-5546d4e0", Component.options)
+  }
+  module.hot.dispose(function (data) {
+    disposed = true
+  })
+})()}
+
+module.exports = Component.exports
+
+
+/***/ }),
+/* 36 */
+/***/ (function(module, exports, __webpack_require__) {
+
+// style-loader: Adds some css to the DOM by adding a <style> tag
+
+// load the styles
+var content = __webpack_require__(37);
+if(typeof content === 'string') content = [[module.i, content, '']];
+if(content.locals) module.exports = content.locals;
+// add the styles to the DOM
+var update = __webpack_require__(5)("22cb40c1", content, false, {});
+// Hot Module Replacement
+if(false) {
+ // When the styles change, update the <style> tags
+ if(!content.locals) {
+   module.hot.accept("!!../../node_modules/css-loader/index.js!../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-5546d4e0\",\"scoped\":false,\"hasInlineConfig\":true}!../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./home.vue", function() {
+     var newContent = require("!!../../node_modules/css-loader/index.js!../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-5546d4e0\",\"scoped\":false,\"hasInlineConfig\":true}!../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./home.vue");
+     if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+     update(newContent);
+   });
+ }
+ // When the module is disposed, remove the <style> tags
+ module.hot.dispose(function() { update(); });
+}
+
+/***/ }),
+/* 37 */
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(4)(false);
+// imports
+
+
+// module
+exports.push([module.i, "\n.wrapper {\n  justify-content: flex-start;\n  align-items: center;\n}\n.listWrap{\n  margin-top: 1rem;\n  flex-direction:column;\n  width: 100%;\n  background: #eee;\n}\n.logo {\n  width: 5.65333rem;\n  height: 2.66667rem;\n}\n.greeting {\n  text-align: center;\n  margin-top: 0.93333rem;\n  font-size: 0.66667rem;\n  color: #41B883;\n}\n.message {\n  margin: 0.4rem;\n  font-size: 0.42667rem;\n  color: #727272;\n}\n", ""]);
+
+// exports
+
+
+/***/ }),
+/* 38 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _HelloWorld = __webpack_require__(9);
+
+var _HelloWorld2 = _interopRequireDefault(_HelloWorld);
+
+var _topBar = __webpack_require__(17);
+
+var _topBar2 = _interopRequireDefault(_topBar);
+
+var _listItem = __webpack_require__(14);
+
+var _listItem2 = _interopRequireDefault(_listItem);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _toConsumableArray(arr) { if (Array.isArray(arr)) { for (var i = 0, arr2 = Array(arr.length); i < arr.length; i++) { arr2[i] = arr[i]; } return arr2; } else { return Array.from(arr); } } //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+var stream = weex.requireModule('stream');
+exports.default = {
+  name: 'home',
+  components: {
+    HelloWorld: _HelloWorld2.default,
+    TopBar: _topBar2.default,
+    listItem: _listItem2.default
+  },
+  data: function data() {
+    return {
+      logo: 'https://gw.alicdn.com/tfs/TB1yopEdgoQMeJjy1XaXXcSsFXa-640-302.png',
+      listData: [],
+      loadinging: false,
+      params: {
+        page: 1,
+        tab: '',
+        limit: 10,
+        mdrender: false
+      }
+    };
+  },
+  created: function created() {
+    var _this = this;
+
+    // this.fetchData(this.params)
+    var me = this;
+    stream.fetch({
+      method: 'GET',
+      url: 'https://cnodejs.org/api/v1/topics?page=' + this.params.page + '&limit=' + this.params.limit + '&tab=' + this.params.tab,
+      type: 'json'
+    }, function (res) {
+      console.log(res);
+      if (res.data.success) {
+        console.log(me.listData.length - 1);
+        if (me.listData.length && me.listData[me.listData.length - 1].error) {
+          console.log();
+          me.listDat.splice(me.listData.length - 1, 1);
+        } else {
+          var _me$listData;
+
+          _this.loadinging = false;
+          me.params.page++;
+          (_me$listData = me.listData).push.apply(_me$listData, _toConsumableArray(res.data.data));
+        }
+      } else {
+        me.listData.push({ 'error': 'request failed' });
+      }
+    });
+  },
+
+  methods: {
+    fetchData: function fetchData() {
+      var _this2 = this;
+
+      var me = this;
+      stream.fetch({
+        method: 'GET',
+        url: 'https://cnodejs.org/api/v1/topics?page=' + this.params.page + '&limit=' + this.params.limit + '&tab=' + this.params.tab,
+        type: 'json'
+      }, function (res) {
+        console.log(res);
+        if (res.data.success) {
+          console.log(me.listData.length - 1);
+          if (me.listData.length && me.listData[me.listData.length - 1].error) {
+            console.log();
+            me.listDat.splice(me.listData.length - 1, 1);
+          } else {
+            var _me$listData2;
+
+            _this2.loadinging = false;
+            me.params.page++;
+            (_me$listData2 = me.listData).push.apply(_me$listData2, _toConsumableArray(res.data.data));
+          }
+        } else {
+          me.listData.push({ 'error': 'request failed' });
+        }
+      });
+    },
+    loadmore: function loadmore() {
+      console.log(1);
+    },
+    onloading: function onloading() {
+      console.log(2);
+      this.loadinging = true;
+      this.fetchData();
+    }
+  }
+};
+
+/***/ }),
+/* 39 */
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+  return _c('div', {
+    staticClass: "wrapper weex-ct weex-div",
+    attrs: {
+      "weex-type": "div"
+    }
+  }, [_c('list', {
+    staticClass: "listWrap",
+    attrs: {
+      "loadmoreoffset": "50",
+      "data-evt-loadmore": ""
+    },
+    nativeOn: {
+      "loadmore": _vm.loadmore
+    }
+  }, [_vm._l((_vm.listData), function(item) {
+    return _c('section', {
+      key: item.id,
+      staticClass: " weex-ct weex-cell",
+      attrs: {
+        "weex-type": "cell"
+      }
+    }, [_c('listItem', {
+      attrs: {
+        "listItem": item
+      }
+    })], 1)
+  }), _vm._v(" "), _c('loading', {
+    staticClass: "loading",
+    attrs: {
+      "display": _vm.loadinging ? 'show' : 'hide',
+      "data-evt-loading": ""
+    },
+    nativeOn: {
+      "loading": function($event) {
+        $event.stopPropagation();
+        return _vm.onloading($event)
+      }
+    }
+  }, [_c('p', {
+    staticClass: "indicator-text weex-el weex-text",
+    attrs: {
+      "weex-type": "text"
+    }
+  }, [_vm._v("Loading ...")]), _vm._v(" "), _c('loading-indicator', {
+    staticClass: "indicator",
+    attrs: {}
+  })], 1)], 2), _vm._v(" "), _c('TopBar')], 1)
+},staticRenderFns: []}
+module.exports.render._withStripped = true
+if (false) {
+  module.hot.accept()
+  if (module.hot.data) {
+     require("vue-hot-reload-api").rerender("data-v-5546d4e0", module.exports)
+  }
+}
 
 /***/ })
 /******/ ]);

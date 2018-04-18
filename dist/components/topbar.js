@@ -62,31 +62,26 @@
 /******/ 	__webpack_require__.p = "";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 6);
+/******/ 	return __webpack_require__(__webpack_require__.s = 27);
 /******/ })
 /************************************************************************/
-/******/ ([
-/* 0 */,
-/* 1 */,
-/* 2 */,
-/* 3 */,
-/* 4 */,
-/* 5 */,
-/* 6 */
+/******/ ({
+
+/***/ 27:
 /***/ (function(module, exports, __webpack_require__) {
 
 var __vue_exports__, __vue_options__
 var __vue_styles__ = []
 
 /* styles */
-__vue_styles__.push(__webpack_require__(7)
+__vue_styles__.push(__webpack_require__(28)
 )
 
 /* script */
-__vue_exports__ = __webpack_require__(8)
+__vue_exports__ = __webpack_require__(29)
 
 /* template */
-var __vue_template__ = __webpack_require__(9)
+var __vue_template__ = __webpack_require__(30)
 __vue_options__ = __vue_exports__ = __vue_exports__ || {}
 if (
   typeof __vue_exports__.default === "object" ||
@@ -98,10 +93,10 @@ __vue_options__ = __vue_exports__ = __vue_exports__.default
 if (typeof __vue_options__ === "function") {
   __vue_options__ = __vue_options__.options
 }
-__vue_options__.__file = "H:\\lwr\\weexdemo\\src\\components\\topbar.vue"
+__vue_options__.__file = "D:\\lwr\\weexapp\\src\\components\\topbar.vue"
 __vue_options__.render = __vue_template__.render
 __vue_options__.staticRenderFns = __vue_template__.staticRenderFns
-__vue_options__._scopeId = "data-v-1be93cf5"
+__vue_options__._scopeId = "data-v-50a71123"
 __vue_options__.style = __vue_options__.style || {}
 __vue_styles__.forEach(function (module) {
   for (var name in module) {
@@ -118,31 +113,39 @@ new Vue(module.exports)
 
 
 /***/ }),
-/* 7 */
+
+/***/ 28:
 /***/ (function(module, exports) {
 
 module.exports = {
   "topbar": {
-    "position": "absolute",
+    "position": "fixed",
     "left": 0,
     "top": 0,
     "right": 0,
     "height": "80",
     "flex": 1,
     "flexDirection": "row",
-    "justifyContent": "space-around",
     "background": "#fff",
     "borderBottom": "1px solid #ddd"
   },
   "topbarItem": {
     "lineHeight": "80",
     "color": "#333333",
-    "fontSize": "14"
+    "fontSize": "14",
+    "flex": 1,
+    "alignSelf": "center",
+    "textAlign": "center",
+    "borderBottom": "3px solid transparent"
+  },
+  "topbarItemactive": {
+    "borderBottomColor": "#3eb4ff"
   }
 }
 
 /***/ }),
-/* 8 */
+
+/***/ 29:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -161,6 +164,7 @@ exports.default = {
   name: 'topBar',
   data: function data() {
     return {
+      active: 0,
       itemData: [{
         name: '全部',
         id: 'all'
@@ -175,24 +179,42 @@ exports.default = {
         id: 'job'
       }]
     };
+  },
+
+  methods: {
+    tabChange: function tabChange(index) {
+      this.active = index;
+      this.$parent.params.tab = 'ask';
+      this.$parent.fetchData();
+    }
   }
 };
 
 /***/ }),
-/* 9 */
+
+/***/ 30:
 /***/ (function(module, exports) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
   return _c('div', {
     staticClass: ["topbar"]
-  }, _vm._l((_vm.itemData), function(itme) {
+  }, _vm._l((_vm.itemData), function(itme, index) {
     return _c('text', {
       key: itme.id,
-      staticClass: ["topbarItem"]
+      staticClass: ["topbarItem"],
+      class: {
+        'topbarItemactive': _vm.active === index
+      },
+      on: {
+        "click": function($event) {
+          _vm.tabChange(index)
+        }
+      }
     }, [_vm._v(_vm._s(itme.name))])
   }))
 },staticRenderFns: []}
 module.exports.render._withStripped = true
 
 /***/ })
-/******/ ]);
+
+/******/ });

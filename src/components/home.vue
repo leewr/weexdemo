@@ -39,7 +39,28 @@ export default {
     }
   },
   created () {
-    this.fetchData(this.params)
+    // this.fetchData(this.params)
+    const me = this
+    stream.fetch({
+      method: 'GET',
+      url: `https://cnodejs.org/api/v1/topics?page=${this.params.page}&limit=${this.params.limit}&tab=${this.params.tab}`,
+      type: 'json'
+    }, res => {
+      console.log(res)
+      if (res.data.success) {
+        console.log(me.listData.length - 1)
+        if (me.listData.length && me.listData[me.listData.length - 1].error) {
+          console.log()
+          me.listDat.splice(me.listData.length - 1, 1)
+        } else {
+          this.loadinging = false
+          me.params.page++
+          me.listData.push(...res.data.data)
+        }
+      } else {
+        me.listData.push({'error': 'request failed'})
+      }
+    })
   },
   methods: {
     fetchData () {

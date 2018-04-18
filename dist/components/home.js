@@ -62,7 +62,7 @@
 /******/ 	__webpack_require__.p = "";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 31);
+/******/ 	return __webpack_require__(__webpack_require__.s = 22);
 /******/ })
 /************************************************************************/
 /******/ ([
@@ -10642,30 +10642,21 @@ module.exports = __vue_exports__
 /***/ }),
 /* 20 */,
 /* 21 */,
-/* 22 */,
-/* 23 */,
-/* 24 */,
-/* 25 */,
-/* 26 */,
-/* 27 */,
-/* 28 */,
-/* 29 */,
-/* 30 */,
-/* 31 */
+/* 22 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var __vue_exports__, __vue_options__
 var __vue_styles__ = []
 
 /* styles */
-__vue_styles__.push(__webpack_require__(3)
+__vue_styles__.push(__webpack_require__(23)
 )
 
 /* script */
-__vue_exports__ = __webpack_require__(4)
+__vue_exports__ = __webpack_require__(24)
 
 /* template */
-var __vue_template__ = __webpack_require__(11)
+var __vue_template__ = __webpack_require__(25)
 __vue_options__ = __vue_exports__ = __vue_exports__ || {}
 if (
   typeof __vue_exports__.default === "object" ||
@@ -10677,10 +10668,10 @@ __vue_options__ = __vue_exports__ = __vue_exports__.default
 if (typeof __vue_options__ === "function") {
   __vue_options__ = __vue_options__.options
 }
-__vue_options__.__file = "D:\\lwr\\weexapp\\src\\index.vue"
+__vue_options__.__file = "D:\\lwr\\weexapp\\src\\components\\home.vue"
 __vue_options__.render = __vue_template__.render
 __vue_options__.staticRenderFns = __vue_template__.staticRenderFns
-__vue_options__._scopeId = "data-v-66c45351"
+__vue_options__._scopeId = "data-v-62031624"
 __vue_options__.style = __vue_options__.style || {}
 __vue_styles__.forEach(function (module) {
   for (var name in module) {
@@ -10695,6 +10686,214 @@ module.exports = __vue_exports__
 module.exports.el = 'true'
 new Vue(module.exports)
 
+
+/***/ }),
+/* 23 */
+/***/ (function(module, exports) {
+
+module.exports = {
+  "wrapper": {
+    "justifyContent": "flex-start",
+    "alignItems": "center"
+  },
+  "listWrap": {
+    "marginTop": "75",
+    "flexDirection": "column",
+    "width": 100,
+    "background": "#eee"
+  },
+  "logo": {
+    "width": "424",
+    "height": "200"
+  },
+  "greeting": {
+    "textAlign": "center",
+    "marginTop": "70",
+    "fontSize": "50",
+    "color": "#41B883"
+  },
+  "message": {
+    "marginTop": "30",
+    "marginRight": "30",
+    "marginBottom": "30",
+    "marginLeft": "30",
+    "fontSize": "32",
+    "color": "#727272"
+  }
+}
+
+/***/ }),
+/* 24 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _HelloWorld = __webpack_require__(5);
+
+var _HelloWorld2 = _interopRequireDefault(_HelloWorld);
+
+var _topBar = __webpack_require__(6);
+
+var _topBar2 = _interopRequireDefault(_topBar);
+
+var _listItem = __webpack_require__(7);
+
+var _listItem2 = _interopRequireDefault(_listItem);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _toConsumableArray(arr) { if (Array.isArray(arr)) { for (var i = 0, arr2 = Array(arr.length); i < arr.length; i++) { arr2[i] = arr[i]; } return arr2; } else { return Array.from(arr); } } //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+var stream = weex.requireModule('stream');
+exports.default = {
+  name: 'home',
+  components: {
+    HelloWorld: _HelloWorld2.default,
+    TopBar: _topBar2.default,
+    listItem: _listItem2.default
+  },
+  data: function data() {
+    return {
+      logo: 'https://gw.alicdn.com/tfs/TB1yopEdgoQMeJjy1XaXXcSsFXa-640-302.png',
+      listData: [],
+      loadinging: false,
+      params: {
+        page: 1,
+        tab: '',
+        limit: 10,
+        mdrender: false
+      }
+    };
+  },
+  created: function created() {
+    var _this = this;
+
+    // this.fetchData(this.params)
+    var me = this;
+    stream.fetch({
+      method: 'GET',
+      url: 'https://cnodejs.org/api/v1/topics?page=' + this.params.page + '&limit=' + this.params.limit + '&tab=' + this.params.tab,
+      type: 'json'
+    }, function (res) {
+      console.log(res);
+      if (res.data.success) {
+        console.log(me.listData.length - 1);
+        if (me.listData.length && me.listData[me.listData.length - 1].error) {
+          console.log();
+          me.listDat.splice(me.listData.length - 1, 1);
+        } else {
+          var _me$listData;
+
+          _this.loadinging = false;
+          me.params.page++;
+          (_me$listData = me.listData).push.apply(_me$listData, _toConsumableArray(res.data.data));
+        }
+      } else {
+        me.listData.push({ 'error': 'request failed' });
+      }
+    });
+  },
+
+  methods: {
+    fetchData: function fetchData() {
+      var _this2 = this;
+
+      var me = this;
+      stream.fetch({
+        method: 'GET',
+        url: 'https://cnodejs.org/api/v1/topics?page=' + this.params.page + '&limit=' + this.params.limit + '&tab=' + this.params.tab,
+        type: 'json'
+      }, function (res) {
+        console.log(res);
+        if (res.data.success) {
+          console.log(me.listData.length - 1);
+          if (me.listData.length && me.listData[me.listData.length - 1].error) {
+            console.log();
+            me.listDat.splice(me.listData.length - 1, 1);
+          } else {
+            var _me$listData2;
+
+            _this2.loadinging = false;
+            me.params.page++;
+            (_me$listData2 = me.listData).push.apply(_me$listData2, _toConsumableArray(res.data.data));
+          }
+        } else {
+          me.listData.push({ 'error': 'request failed' });
+        }
+      });
+    },
+    loadmore: function loadmore() {
+      console.log(1);
+    },
+    onloading: function onloading() {
+      console.log(2);
+      this.loadinging = true;
+      this.fetchData();
+    }
+  }
+};
+
+/***/ }),
+/* 25 */
+/***/ (function(module, exports) {
+
+module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+  return _c('div', {
+    staticClass: ["wrapper"]
+  }, [_c('list', {
+    staticClass: ["listWrap"],
+    attrs: {
+      "loadmoreoffset": "50"
+    },
+    on: {
+      "loadmore": _vm.loadmore
+    }
+  }, [_vm._l((_vm.listData), function(item) {
+    return _c('cell', {
+      key: item.id,
+      appendAsTree: true,
+      attrs: {
+        "append": "tree"
+      }
+    }, [_c('listItem', {
+      attrs: {
+        "listItem": item
+      }
+    })], 1)
+  }), _c('loading', {
+    staticClass: ["loading"],
+    attrs: {
+      "display": _vm.loadinging ? 'show' : 'hide'
+    },
+    on: {
+      "loading": _vm.onloading
+    }
+  }, [_c('text', {
+    staticClass: ["indicator-text"]
+  }, [_vm._v("Loading ...")]), _c('loading-indicator', {
+    staticClass: ["indicator"]
+  })])], 2), _c('TopBar')], 1)
+},staticRenderFns: []}
+module.exports.render._withStripped = true
 
 /***/ })
 /******/ ]);
