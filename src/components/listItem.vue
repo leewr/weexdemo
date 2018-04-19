@@ -35,7 +35,10 @@
 </template>
 <script type="text/javascript">
 import {dateFormate} from '@/utils/index.js'
-import router from '@/router/router.js'
+import router from '@/router'
+import mixins from '@/mixins'
+const navigator = weex.requireModule('navigator')
+const modal = weex.requireModule('modal')
 export default {
     name: 'listItem',
     data () {
@@ -48,12 +51,18 @@ export default {
           type: Object
       }
     },
+    mixins: [mixins],
     created () {
         // console.log(this.listItem)
     },
     methods: {
       viewDetail (id) {
-        router.push('article')
+        navigator.push({
+          url: './detail.js',
+          animated: "true"
+        }, event => {
+          modal.toast({ message: 'callback:' + event})
+        })
       }
     },
     filters: {

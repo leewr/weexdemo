@@ -1,7 +1,7 @@
 
 import Vue from 'vue'
 import weex from 'weex-vue-render'
-import router from '@/router/router.js'
+import router from '@/router/index.js'
 
 
 

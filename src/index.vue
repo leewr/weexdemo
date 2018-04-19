@@ -17,9 +17,11 @@
 import HelloWorld from '@/components/HelloWorld.vue'
 import TopBar from '@/components/topBar.vue'
 import listItem from '@/components/listItem.vue'
+import mixins from '@/mixins'
 const stream = weex.requireModule('stream')
 export default {
   name: 'home',
+  mixins: [mixins],
   components: {
     HelloWorld,
     TopBar,
